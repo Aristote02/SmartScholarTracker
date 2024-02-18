@@ -1,0 +1,38 @@
+﻿@using StudentProgress.BusinessLogic.Models
+@model List<StudentAveragePoint>
+
+<h2 text-align:center>Average of student points</h2>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="" style="color:white;">Average of student points</h2>
+		</div>
+	</div>
+
+	<br /><br />
+
+	<table class="table table-bordered table-striped table-dark" style="width:100%">
+		<thead>
+			<tr>
+				@* <th>StudentName</th> *@
+				<th>Faculty</th>
+                <th>Specialty</th>
+				<th>Average Point</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var exam in Model)
+			{
+				<tr>
+					@* <td>@exam.StudentName</td> *@
+					<td>@exam.Faculty</td>
+					<td>@exam.Specialty</td>
+					<td>@exam.AveragePoint</td>
+					<td></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

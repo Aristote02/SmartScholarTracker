@@ -1,0 +1,58 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@model List<TestDto>
+
+
+<h2 text-align:center>List of All Tests</h2>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="" style="color:white;">List of tests</h2>
+		</div>
+		@if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+		{
+			<div class="col-6 text-end">
+				<a class="btn btn-primary btn-sm" href="/Test/Add" role="button">
+					<i class="bi bi-plus-circle"></i> Add new test
+				</a>
+			</div>
+		}
+		
+	</div>
+
+	<br /><br />
+
+	<table class="table table-bordered table-striped table-dark" style="width:100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>SubjectName</th>
+				<th>Type Of Test</th>
+				<th>Date</th>
+				@if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<th></th>
+				}
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var test in Model)
+			{
+				<tr>
+					<td>@test.Id</td>
+					<td>@test.SubjectName</td>
+					<td>@test.TypeOfTest</td>
+					<td>@test.DateTime</td>
+					@if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+					{
+						<td>
+							<a class="btn btn-primary btn-sm" href="/Test/Edit/@test.Id">Edit</a>
+							<a class="btn btn-danger btn-sm" href="/Test/Delete/@test.Id">Delete</a>
+						</td>
+					}
+					
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

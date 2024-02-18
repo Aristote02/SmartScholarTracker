@@ -1,0 +1,15 @@
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\bin\Debug\net6.0\StudentProgress.BusinessLogic.deps.json
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\bin\Debug\net6.0\StudentProgress.BusinessLogic.dll
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\bin\Debug\net6.0\StudentProgress.BusinessLogic.pdb
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\bin\Debug\net6.0\StudentProgress.DataAccess.dll
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\bin\Debug\net6.0\StudentProgress.DataAccess.pdb
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.csproj.AssemblyReference.cache
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.AssemblyInfoInputs.cache
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.AssemblyInfo.cs
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.csproj.CoreCompileInputs.cache
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.csproj.CopyComplete
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.dll
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\refint\StudentProgress.BusinessLogic.dll
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\StudentProgress.BusinessLogic.pdb
+E:\StudentProgress\StudentProgress\StudentProgress.BusinessLogic\obj\Debug\net6.0\ref\StudentProgress.BusinessLogic.dll

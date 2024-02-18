@@ -1,0 +1,44 @@
+﻿@using StudentProgress.DataAccess.Models
+@model List<LaggingBehindStudent>
+
+<h2>Lagging behind students in the session</h2>
+
+<form method="post">
+    <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required />
+    </div>
+
+    <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required />
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h3>Results:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Specialty</th>
+                <th>Point</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentName</td>
+                    <td>@student.Specialty</td>                   
+                    <td>@student.Point</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

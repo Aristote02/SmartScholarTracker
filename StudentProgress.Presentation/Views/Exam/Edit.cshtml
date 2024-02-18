@@ -1,0 +1,63 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@using StudentProgress.BusinessLogic.Services.Interfaces
+@model ExamDto
+@inject ITestService testService
+@inject IStudentService studentService
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data" asp-route-id="@Model.Id">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 style="text-align:center">Edit Exam</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Student Name</label>
+            <select asp-for="StudentId" asp-items="@(await GetStudents())" class="form-control">
+                <option value="">Select Student</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Test Type</label>
+            <select asp-for="TestId" asp-items="@(await GetTestTypes())" class="form-control">
+                <option value="">Select Test Type</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Point">Point</label>
+            <input asp-for="Point" class="form-control" placeholder="Point">
+            <span asp-validation-for="Point" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px;">Submit</button>
+    </div>
+</form>
+
+@functions {
+    private async Task<List<SelectListItem>> GetTestTypes()
+    {
+        var testTypes = await testService.GetAllTestsAsync();
+
+        return testTypes.Select(x => new SelectListItem
+            {
+                Text = x.TypeOfTest.ToString() + " " + x.DateTime,
+                Value = x.Id.ToString()
+            })
+            .ToList();
+    }
+
+    private async Task<List<SelectListItem>> GetStudents()
+    {
+        var students = await studentService.GetAllStudentsAsync();
+
+        return students.Select(x => new SelectListItem
+            {
+                Text = x.FullName,
+                Value = x.Id.ToString(),
+                // Selected = x.Id == Model.StudentId
+            })
+            .ToList();
+    }
+}

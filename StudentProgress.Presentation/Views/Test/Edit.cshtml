@@ -1,0 +1,60 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@using StudentProgress.BusinessLogic.Services.Interfaces
+@using StudentProgress.DataAccess.Data.Enum
+
+@model TestDto
+@inject ISubjectService subjectService
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data" asp-route-id="@Model.Id">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 style="text-align:center">Edit Test</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Subject Name</label>
+            <select asp-for="SubjectId" asp-items="@(await GetSubjects())" class="form-control">
+                <option value="">Select Subject</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Type of test</label>
+            <select asp-for="TypeOfTest" asp-items="@(@* await *@ GetTypeOfTest())" class="form-control">
+                <option value="">Select type of test</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px;">Submit</button>
+    </div>
+</form>
+
+@functions {
+    private async Task<List<SelectListItem>> GetSubjects()
+    {
+        var subjects = await subjectService.GetAllSubjectsAsync();
+
+        return subjects.Select(x => new SelectListItem
+            {
+                Text = x.SubjectName,
+                Value = x.Id.ToString()
+            })
+            .ToList();
+    }
+
+    private List<SelectListItem> GetTypeOfTest()
+    {
+        var typeOfTest = Enum.GetValues(typeof(TypeOfTest))
+            .Cast<TypeOfTest>()
+            .Select(g => new SelectListItem
+                {
+                    Text = g.ToString(),
+                    Value = g.ToString()
+                })
+            .ToList();
+
+        return typeOfTest;
+    }
+}

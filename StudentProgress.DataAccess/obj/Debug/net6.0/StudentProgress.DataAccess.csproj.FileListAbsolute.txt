@@ -1,0 +1,14 @@
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\bin\Debug\net6.0\StudentProgress.DataAccess.deps.json
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\bin\Debug\net6.0\StudentProgress.DataAccess.dll
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\bin\Debug\net6.0\StudentProgress.DataAccess.pdb
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.AssemblyInfoInputs.cache
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.AssemblyInfo.cs
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.csproj.CoreCompileInputs.cache
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.dll
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\refint\StudentProgress.DataAccess.dll
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.pdb
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\ref\StudentProgress.DataAccess.dll
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\bin\Debug\net6.0\StudentProgress.DataAccess.runtimeconfig.json
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.csproj.AssemblyReference.cache
+E:\StudentProgress\StudentProgress\StudentProgress.DataAccess\obj\Debug\net6.0\StudentProgress.DataAccess.genruntimeconfig.cache

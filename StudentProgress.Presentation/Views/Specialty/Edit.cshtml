@@ -1,0 +1,22 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@model SpecialtyDto
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data" asp-route-id="@Model.Id">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 style="text-align:center">Edit Specialty</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SpecialtyName">Specialty Name</label>
+            <input asp-for="SpecialtyName" class="form-control" placeholder="SpecialtyName">
+            <span asp-validation-for="SpecialtyName" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px;">Submit</button>
+    </div>
+</form>
+

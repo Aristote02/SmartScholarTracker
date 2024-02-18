@@ -1,0 +1,54 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@model List<FacultyDto>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="" style="color:black;">List of faculties</h2>
+		</div>
+		@{
+			if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+			{
+				<div class="col-6 text-end">
+					<a class="btn btn-primary btn-sm" href="/Faculty/Add" role="button">
+						<i class="bi bi-plus-circle"></i> Add new faculty
+					</a>
+				</div>
+			}
+		}
+		
+	</div>
+
+	<br /><br />
+
+	<table class="table table-bordered table-striped table-dark" style="width:100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				@if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+				{
+					<th></th>
+				}
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var faculty in Model)
+			{
+				<tr>
+					<td>@faculty.Id</td>
+					<td>@faculty.FacultyName</td>
+
+					@if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated && User.IsInRole("admin"))
+					{
+						<td>
+							<a class="btn btn-primary btn-sm" href="/Faculty/Edit/@faculty.Id">Edit</a>
+							<a class="btn btn-danger btn-sm" href="/Faculty/Delete/@faculty.Id">Delete</a>
+						</td>
+					}
+					
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

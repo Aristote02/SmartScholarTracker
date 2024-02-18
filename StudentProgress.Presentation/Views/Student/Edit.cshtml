@@ -1,0 +1,91 @@
+﻿@using StudentProgress.BusinessLogic.Profiles.Dtos
+@using StudentProgress.BusinessLogic.Services.Interfaces
+@using StudentProgress.DataAccess.Data.Enum
+@model StudentDto
+@inject IFacultyService facultyService
+@inject ISpecialtyService specialtyService
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data" asp-route-id="@Model.Id">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 style="text-align:center">Edit Exam</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FullName">FullName</label>
+            <input asp-for="FullName" class="form-control" placeholder="FullName">
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Age">Age</label>
+            <input asp-for="Age" class="form-control" placeholder="Age">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Faculty Name</label>
+            <select asp-for="FacultyId" asp-items="@(await GetFaculties())" class="form-control">
+                <option value="">Select Faculty</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Specialty Name</label>
+            <select asp-for="SpecialtyId" asp-items="@(await GetSpecialties())" class="form-control">
+                <option value="">Select Specialty</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Group Name</label>
+            <select asp-for="GroupName" asp-items="@(@* await *@ GetGroups())" class="form-control">
+                <option value="">Select Group</option>
+            </select>
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary" style="width:150px;">Submit</button>
+    </div>
+</form>
+
+@functions {
+    private async Task<List<SelectListItem>> GetFaculties()
+    {
+        var faculties = await facultyService.GetAllFacultiesAsync();
+
+        return faculties.Select(x => new SelectListItem
+            {
+                Text = x.FacultyName,
+                Value = x.Id.ToString(),
+            })
+            .ToList();
+    }
+
+    private async Task<List<SelectListItem>> GetSpecialties()
+    {
+        var specialties = await specialtyService.GetAllSpecialtiesAsync();
+
+        return specialties.Select(x => new SelectListItem
+            {
+                Text = x.SpecialtyName,
+                Value = x.Id.ToString()
+            })
+            .ToList();
+    }
+
+    private List<SelectListItem> GetGroups()
+    {
+        var groups = Enum.GetValues(typeof(StudentGroup))
+            .Cast<StudentGroup>()
+            .Select(g => new SelectListItem
+                {
+                    Text = g.ToString(),
+                    Value = g.ToString()
+                })
+            .ToList();
+
+        return groups;
+    }
+}

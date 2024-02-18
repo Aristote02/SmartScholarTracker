@@ -1,0 +1,34 @@
+﻿@using StudentProgress.BusinessLogic.Models
+@model List<MostDifficultAndSimplestSubject>
+
+<h2 text-align:center>Simplest subjects per specialty</h2>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="" style="color:white;">Simplest subjects per specialty</h2>
+		</div>
+	</div>
+
+	<br /><br />
+
+	<table class="table table-bordered table-striped table-dark" style="width:100%">
+		<thead>
+			<tr>
+				<th>Specialty</th>
+				<th>Subject</th>
+				<th>Average subject point</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var exam in Model)
+			{
+				<tr>
+					<td>@exam.Specialty</td>
+					<td>@exam.Subject</td>
+					<td>@exam.AverageSubjectPoint</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
